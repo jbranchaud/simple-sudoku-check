@@ -18,7 +18,7 @@
   "files": [
     "lib"
   ],
-  "keywords": [],
+  "keywords": ["sudoku"],
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.3.3",
