@@ -28,11 +28,12 @@ exports.simpleSudokuCheck = {
     done();
   },
   'no args': function(test) {
-    test.expect(1);
+    test.expect(2);
     // tests here
     // a valid sudoku solution from http://en.wikipedia.org/wiki/Sudoku
     // 534678912672195348198342567859761423426853791713924856961537284287419635345286179
     test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'should be valid!');
+    test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'should not be valid!');
     test.done();
   }
 };
