@@ -23,4 +23,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2014 Josh Branchaud. Licensed under the MIT license.
+
+Copyright &copy; 2014 Josh Branchaud.
+
+Licensed under the MIT license. See LICENSE for details.
