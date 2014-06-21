@@ -35,5 +35,17 @@ exports.simpleSudokuCheck = {
     test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'should be valid!');
     test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'should not be valid!');
     test.done();
+  },
+
+  'is valid length': function(test) {
+    test.expect(4);
+    test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'should be a valid length.');
+    // not long enough -> invalid
+    test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'should not be a valid length.');
+    // empty string -> invalid
+    test.ok(!simpleSudokuCheck.isValidSolution(''), 'should not be a valid length.');
+    // too long -> invalid
+    test.ok(!simpleSudokuCheck.isValidSolution('123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789'), 'should not be a valid length.');
+    test.done();
   }
 };
