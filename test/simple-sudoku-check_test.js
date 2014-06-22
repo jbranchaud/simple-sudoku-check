@@ -47,5 +47,13 @@ exports.simpleSudokuCheck = {
     // too long -> invalid
     test.ok(!simpleSudokuCheck.isValidSolution('123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789'), 'should not be a valid length.');
     test.done();
+  },
+
+  'contains valid characters': function(test) {
+    test.expect(3);
+    test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'contains valid characters.');
+    test.ok(!simpleSudokuCheck.isValidSolution('ABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHI'), 'contains invalid characters.');
+    test.ok(!simpleSudokuCheck.isValidSolution('012345678012345678012345678012345678012345678012345678012345678012345678012345678'), 'contains invalid characters.');
+    test.done();
   }
 };
