@@ -51,8 +51,11 @@ exports.simpleSudokuCheck = {
 
   'contains valid characters': function(test) {
     test.expect(3);
+    // actual solution to actual sudoku puzzle, it should be valid.
     test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'contains valid characters.');
+    // contains alphabet characters, not valid
     test.ok(!simpleSudokuCheck.isValidSolution('ABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHI'), 'contains invalid characters.');
+    // contains 0, when only 1-9 is valid
     test.ok(!simpleSudokuCheck.isValidSolution('012345678012345678012345678012345678012345678012345678012345678012345678012345678'), 'contains invalid characters.');
     test.done();
   }
