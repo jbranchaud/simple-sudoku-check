@@ -1,6 +1,6 @@
 {
   "name": "simple-sudoku-check",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "lib/simple-sudoku-check.js",
   "description": "An inexpensive, preliminary validity check of a Sudoku solution to be used before another process soundly checks the solution.",
   "homepage": "https://github.com/jbranchaud/simple-sudoku-check",
