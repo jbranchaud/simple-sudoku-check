@@ -28,35 +28,23 @@ exports.simpleSudokuCheck = {
     done();
   },
   'no args': function(test) {
-    test.expect(2);
-    // tests here
+    test.expect(6);
+
     // a valid sudoku solution from http://en.wikipedia.org/wiki/Sudoku
     // 534678912672195348198342567859761423426853791713924856961537284287419635345286179
     test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'should be valid!');
-    test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'should not be valid!');
-    test.done();
-  },
-
-  'is valid length': function(test) {
-    test.expect(4);
-    test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'should be a valid length.');
     // not long enough -> invalid
-    test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'should not be a valid length.');
-    // empty string -> invalid
+    test.ok(!simpleSudokuCheck.isValidSolution('123456789'), 'not long enough, not valid.');
+    // empty string for solution -> invalid
     test.ok(!simpleSudokuCheck.isValidSolution(''), 'should not be a valid length.');
     // too long -> invalid
     test.ok(!simpleSudokuCheck.isValidSolution('123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789'), 'should not be a valid length.');
-    test.done();
-  },
-
-  'contains valid characters': function(test) {
-    test.expect(3);
-    // actual solution to actual sudoku puzzle, it should be valid.
-    test.ok(simpleSudokuCheck.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179'), 'contains valid characters.');
-    // contains alphabet characters, not valid
+    // contains alphabet characters -> not valid
     test.ok(!simpleSudokuCheck.isValidSolution('ABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHI'), 'contains invalid characters.');
-    // contains 0, when only 1-9 is valid
+    // contains 0, when only 1-9 is valid -> not valid
     test.ok(!simpleSudokuCheck.isValidSolution('012345678012345678012345678012345678012345678012345678012345678012345678012345678'), 'contains invalid characters.');
+
+    // done
     test.done();
   }
 };
