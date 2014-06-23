@@ -14,18 +14,20 @@ simple-sudoku-check.isValidSolution('5346789126721953481983425678597614234268537
 
 ## Documentation
 
-_(Coming soon)_
+This module consists of a single exported function, `isValidSolution()`,
+which accepts a string and checks that it meets the following criteria:
 
-## Examples
+- the string contains exactly 81 characters
+- the string's characters are only 1-9
+- the solution is balanced such that each value, 1-9, appears exactly 9
+  times
 
-_(Coming soon)_
+If these criteria are met, `true` is returned. Otherwise `false` is
+returned.
 
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
 
 ## License
 
