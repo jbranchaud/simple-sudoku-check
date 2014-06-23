@@ -28,7 +28,7 @@ exports.simpleSudokuCheck = {
     done();
   },
   'no args': function(test) {
-    test.expect(6);
+    test.expect(7);
 
     // a valid sudoku solution from http://en.wikipedia.org/wiki/Sudoku
     // 534678912672195348198342567859761423426853791713924856961537284287419635345286179
@@ -43,6 +43,8 @@ exports.simpleSudokuCheck = {
     test.ok(!simpleSudokuCheck.isValidSolution('ABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHIABCDEFGHI'), 'contains invalid characters.');
     // contains 0, when only 1-9 is valid -> not valid
     test.ok(!simpleSudokuCheck.isValidSolution('012345678012345678012345678012345678012345678012345678012345678012345678012345678'), 'contains invalid characters.');
+    // contains more than 9 of a character, not balanced -> not valid
+    test.ok(!simpleSudokuCheck.isValidSolution('123456789123456789123456789123456789123456789123456789123456789123456789923456789'), 'contains unbalanced solution.');
 
     // done
     test.done();
