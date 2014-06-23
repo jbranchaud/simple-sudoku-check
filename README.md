@@ -8,7 +8,8 @@ Install the module with: `npm install simple-sudoku-check`
 
 ```javascript
 var simple-sudoku-check = require('simple-sudoku-check');
-simple-sudoku-check.awesome(); // "awesome"
+simple-sudoku-check.isValidSolution('534678912672195348198342567859761423426853791713924856961537284287419635345286179');
+//=> true
 ```
 
 ## Documentation
